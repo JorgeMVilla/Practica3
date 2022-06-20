@@ -1,0 +1,13 @@
+<form autocomplete="off" (ngSubmit)="buscar()">
+
+    <input 
+        type="text" 
+        class="form-control"
+        name="nombre"
+        placeholder= {{predef}}
+        [(ngModel)]="termino"
+        (input)="pressKey( $event)"
+        #txtBuscar>
+    
+</form>
+

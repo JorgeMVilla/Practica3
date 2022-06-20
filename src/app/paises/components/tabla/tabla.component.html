@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Bandera</th>
+            <th>Capital</th>
+            <th>Población</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody >
+        <tr *ngFor="let p of paises"
+        class="animate_animated animate_animated_fadeIn ">
+            <td>{{p.name }}</td>
+            <td>
+                <img class="small-flag" [src]=p.flag  [alt]=p.alpha3Code></td>
+            <td>{{p.capital}}</td>
+            <td style="text-align: right;">
+                {{p.population | number}}
+            </td>
+            <td> <a [routerLink]="['/verPais', p.alpha3Code]" >Ver</a> </td>
+        </tr>
+    </tbody>
+    </table>

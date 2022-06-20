@@ -1,0 +1,35 @@
+
+
+<div class="animate_animated animate_animated_fadeIn animate_faster">
+
+<h3>Por Región</h3>
+<hr>
+
+
+
+<div class="row">
+    <div class="col button-div" >
+        <!-- [class.act]="reg === regionActiva" -->
+        <button *ngFor="let reg of regiones"
+            class="btn btn-outline-primary"
+            ngClass="{
+                'btn-primary': regionActiva === reg,
+                'btn-outline-primary': regionActiva !== reg,
+            }"
+            (click)="buscar(reg)">
+            {{reg}}
+        </button>
+    </div>
+</div>
+</div>
+
+<br>
+<h4>{{regionActiva | uppercase }}</h4>
+
+<div *ngIf="match">
+    <div  class="row"><div class="col">
+        <app-tabla [paises]="paises">
+
+        </app-tabla>
+    </div></div>
+</div>

@@ -1,0 +1,34 @@
+<div *ngIf="!pais; else divPais"> Cargando...</div>
+
+<ng-template #divPais>
+
+<div class="row">
+    <div class="col-12">
+        <h1>{{pais.name}} ({{pais.alpha3Code}})</h1>
+    </div>
+    <hr>
+    <div class="col-4">
+    <img [src]="pais.flag" class="img-thumbnail">
+    </div>
+
+    <div class="col">
+        <h3> Propiedades</h3>
+        <ul class="list-group">
+
+        <li class="list-group-item" > Capital: {{pais.capital}} </li>
+        <li class="list-group-item" > Población: {{pais.population |number}} </li>
+        <li class="list-group-item" > Lenguas: <span *ngFor="let lan of pais.languages"> {{lan.name}},  </span>  </li>
+        <li class="list-group-item" > Región: {{pais.region}} </li>
+        <li class="list-group-item" > Subregión: {{pais.subregion}} </li>
+    </ul>
+    </div>
+    
+<div class="row">
+    <div class="col">
+        <Tr>
+    </div>
+</div>
+
+</div>
+
+</ng-template>
